@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -35,6 +36,8 @@
 #include "tetromino.h"
 #include "scene.h"
 #include "parameter.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,9 +101,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   // init
-    button_init();
+  HAL_TIM_Base_Start_IT(&htim3);
+  button_init();
 //    millis_init();
 //    uart_init(9600);
     LCD_Init();
@@ -112,16 +117,26 @@ int main(void)
     sw_game_scene();
 
 
-    uint32_t button_task_stamp = millis();
+  uint32_t button_task_stamp = millis();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  char msg[20];
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	if(millis() - button_task_stamp >= button_scan_interval){
+		button_task_stamp += button_scan_interval;
+	  	button_task();
+	  	sprintf(msg, "time:%ld\r\n",millis());
+	  	HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), 0xffff);
+	}
+	if(scene_task){
+		scene_task();
+	}
   }
   /* USER CODE END 3 */
 }

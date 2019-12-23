@@ -15,6 +15,7 @@
 "Core/Src/sysmem.o"
 "Core/Src/system_stm32f1xx.o"
 "Core/Src/tetromino.o"
+"Core/Src/tim.o"
 "Core/Src/ui.o"
 "Core/Src/usart.o"
 "Core/Startup/startup_stm32f103rctx.o"

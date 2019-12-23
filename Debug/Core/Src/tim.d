@@ -1,4 +1,4 @@
-Core/Src/ui.o: ../Core/Src/ui.c ../Core/Inc/lcd.h ../Core/Inc/main.h \
+Core/Src/tim.o: ../Core/Src/tim.c ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -22,12 +22,9 @@ Core/Src/ui.o: ../Core/Src/ui.c ../Core/Inc/lcd.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/sys.h ../Core/Inc/grid.h ../Core/Inc/sys.h ../Core/Inc/ui.h \
- ../Core/Inc/lcd.h ../Core/Inc/usart.h ../Core/Inc/tetromino.h \
- ../Core/Inc/parameter.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-../Core/Inc/lcd.h:
+../Core/Inc/tim.h:
 
 ../Core/Inc/main.h:
 
@@ -78,19 +75,3 @@ Core/Src/ui.o: ../Core/Src/ui.c ../Core/Inc/lcd.h ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-
-../Core/Inc/sys.h:
-
-../Core/Inc/grid.h:
-
-../Core/Inc/sys.h:
-
-../Core/Inc/ui.h:
-
-../Core/Inc/lcd.h:
-
-../Core/Inc/usart.h:
-
-../Core/Inc/tetromino.h:
-
-../Core/Inc/parameter.h:
