@@ -10,15 +10,21 @@ typedef struct{
   void (*release_fun)(void);
 }Button_t;
 
-extern Button_t *r_up;
-extern Button_t *r_down;
-extern Button_t *r_left;
-extern Button_t *r_right;
-extern Button_t *r_confirm;
-extern Button_t *r_return;
+
 extern Button_t *k_wakeup;
 extern Button_t *k_key0;
 extern Button_t *k_key1;
+
+
+#define KEY0  HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_5)
+#define KEY1  HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15)
+#define WK_UP HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)
+
+
+#define KEY0_PRES	1		//KEY0
+#define KEY1_PRES	2		//KEY1
+#define WKUP_PRES	3		//WK_UP
+
 
 extern uint32_t button_scan_interval;
 

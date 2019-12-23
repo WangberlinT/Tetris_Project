@@ -24,8 +24,8 @@ Core/Src/scene.o: ../Core/Src/scene.c ../Core/Inc/scene.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/button.h ../Core/Inc/game.h ../Core/Inc/parameter.h \
- ../Core/Inc/ui.h ../Core/Inc/lcd.h ../Core/Inc/stm32f1xx_it.h
+ ../Core/Inc/button.h ../Core/Inc/game.h ../Core/Inc/ui.h \
+ ../Core/Inc/lcd.h ../Core/Inc/stm32f1xx_it.h
 
 ../Core/Inc/scene.h:
 
@@ -84,8 +84,6 @@ Core/Src/scene.o: ../Core/Src/scene.c ../Core/Inc/scene.h \
 ../Core/Inc/button.h:
 
 ../Core/Inc/game.h:
-
-../Core/Inc/parameter.h:
 
 ../Core/Inc/ui.h:
 

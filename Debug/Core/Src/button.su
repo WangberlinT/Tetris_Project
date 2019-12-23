@@ -1,2 +1,2 @@
-button.c:20:6:button_init	16	static
-button.c:38:6:button_task	24	static
+button.c:14:6:button_init	16	static
+button.c:28:6:button_task	24	static

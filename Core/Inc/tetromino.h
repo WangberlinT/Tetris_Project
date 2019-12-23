@@ -27,6 +27,7 @@ typedef struct{
 
 extern Tetromino_t tetromino;
 extern Tetromino_t tetromino_next;
+extern Tetromino_t tetromino_next_next;
 extern Image_t tetimg_list[SHAPE_NUM];
 
 uint8_t left_shift_check(void);

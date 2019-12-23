@@ -31,13 +31,12 @@
 #include "lcd.h"
 #include "button.h"
 #include "game.h"
-#include "millis.h"
 #include "grid.h"
 #include "tetromino.h"
 #include "scene.h"
-#include "parameter.h"
 #include <stdio.h>
 #include <string.h>
+#include "stm32f1xx_it.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -80,7 +79,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -106,16 +104,15 @@ int main(void)
   // init
   HAL_TIM_Base_Start_IT(&htim3);
   button_init();
-//    millis_init();
-//    uart_init(9600);
-    LCD_Init();
-    // save_rank_list();
-//    read_rank_list();
-    // get into game scene
-//    sprintf(hiscore.name, "%s%d", "Player", (rand()%9)+1);
-    game_reset();
-    sw_game_scene();
-
+  //    millis_init();
+  //    uart_init(9600);
+  LCD_Init();
+  // save_rank_list();
+  //    read_rank_list();
+  // get into game scene
+  //    sprintf(hiscore.name, "%s%d", "Player", (rand()%9)+1);
+  game_reset();
+  sw_game_scene();
 
   uint32_t button_task_stamp = millis();
   /* USER CODE END 2 */
@@ -124,19 +121,21 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  char msg[20];
+    char msg[20];
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if(millis() - button_task_stamp >= button_scan_interval){
-		button_task_stamp += button_scan_interval;
-	  	button_task();
-	  	sprintf(msg, "time:%ld\r\n",millis());
-	  	HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), 0xffff);
-	}
-	if(scene_task){
-		scene_task();
-	}
+    if (millis() - button_task_stamp >= button_scan_interval)
+    {
+      button_task_stamp += button_scan_interval;
+      button_task();
+      sprintf(msg, "time:%ld\r\n", millis());
+      HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 0xffff);
+    }
+    if (scene_task)
+    {
+      scene_task();
+    }
   }
   /* USER CODE END 3 */
 }
@@ -165,8 +164,7 @@ void SystemClock_Config(void)
   }
   /** Initializes the CPU, AHB and APB busses clocks 
   */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -194,7 +192,7 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.
@@ -203,7 +201,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

@@ -26,8 +26,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/usart.h \
  ../Core/Inc/gpio.h ../Core/Inc/sys.h ../Core/Inc/lcd.h \
  ../Core/Inc/button.h ../Core/Inc/sys.h ../Core/Inc/game.h \
- ../Core/Inc/parameter.h ../Core/Inc/millis.h ../Core/Inc/grid.h \
- ../Core/Inc/tetromino.h ../Core/Inc/scene.h ../Core/Inc/parameter.h
+ ../Core/Inc/grid.h ../Core/Inc/tetromino.h ../Core/Inc/scene.h \
+ ../Core/Inc/stm32f1xx_it.h
 
 ../Core/Inc/main.h:
 
@@ -97,14 +97,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/game.h:
 
-../Core/Inc/parameter.h:
-
-../Core/Inc/millis.h:
-
 ../Core/Inc/grid.h:
 
 ../Core/Inc/tetromino.h:
 
 ../Core/Inc/scene.h:
 
-../Core/Inc/parameter.h:
+../Core/Inc/stm32f1xx_it.h:
