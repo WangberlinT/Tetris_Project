@@ -1,0 +1,12 @@
+ui.c:9:6:draw_bg	16	static
+ui.c:22:6:update_bg	8	static
+ui.c:30:6:update_main_bg	16	static
+ui.c:35:6:update_sub_bg	16	static
+ui.c:40:6:draw_block	40	static
+ui.c:59:6:grid_render	16	static
+ui.c:77:6:sub_grid_render	16	static
+ui.c:95:6:draw_tetromino	24	static
+ui.c:107:6:draw_next_tetromino	24	static
+ui.c:120:6:draw_name	24	static
+ui.c:124:6:update_score	32	static
+ui.c:135:6:draw_rank_list	56	static

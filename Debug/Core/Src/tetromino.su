@@ -1,0 +1,7 @@
+tetromino.c:10:9:left_shift_check	24	static
+tetromino.c:30:9:right_shift_check	24	static
+tetromino.c:44:9:down_shift_check	24	static
+tetromino.c:58:9:rotation_check	24	static
+tetromino.c:73:6:flush_tetromino	24	static
+tetromino.c:85:6:tetromino_reset	16	static
+tetromino.c:94:6:tetromino_init	24	static
