@@ -135,8 +135,8 @@ void draw_next_next_tetromino(uint8_t clear)
 
 void update_score(uint16_t score)
 {
-  char str_score[7];
-  char str_level[7];
+  char str_score[5];
+  char str_level[5];
   if (score > 9999)
     score = 9999;
   sprintf(str_score, "%4d", score);

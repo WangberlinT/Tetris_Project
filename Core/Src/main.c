@@ -104,13 +104,7 @@ int main(void)
   // init
   HAL_TIM_Base_Start_IT(&htim3);
   button_init();
-  //    millis_init();
-  //    uart_init(9600);
   LCD_Init();
-  // save_rank_list();
-  //    read_rank_list();
-  // get into game scene
-  //    sprintf(hiscore.name, "%s%d", "Player", (rand()%9)+1);
   game_reset();
   sw_game_scene();
 
@@ -121,7 +115,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    char msg[20];
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -129,8 +122,6 @@ int main(void)
     {
       button_task_stamp += button_scan_interval;
       button_task();
-      sprintf(msg, "time:%ld\r\n", millis());
-      HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 0xffff);
     }
     if (scene_task)
     {

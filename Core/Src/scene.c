@@ -1,5 +1,4 @@
 #include "scene.h"
-//#include "millis.h"
 #include "button.h"
 #include "game.h"
 #include "ui.h"
@@ -8,15 +7,6 @@
 
 void (*scene_task)(void);
 
-void start_scene()
-{
-  ;
-}
-
-void rank_scene()
-{
-  ;
-}
 
 void game_scene()
 {
@@ -50,7 +40,4 @@ void sw_game_scene()
   draw_next_next_tetromino(0);
 }
 
-void scence_switch()
-{
-  ;
-}
+

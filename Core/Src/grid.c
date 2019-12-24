@@ -10,24 +10,10 @@ uint8_t max_height = 0;
 uint8_t grid_scan()
 {
   int8_t x, y;
-  // u8 cnt = 0;
   uint8_t row_num = 0;
-  // cell_t cell;
   //scan up->down
   for (y = GRID_HEIGHT; y >= 0; y--)
   {
-    // cnt = 0;
-    // for (x = 0; x < GRID_WIDTH; x++)
-    // {
-    //   cell = grid[y][x];
-    //   if (!cell.isEmpty)
-    //       cnt++;
-    // }
-    // if (cnt == 10)
-    // {
-    //     clear_row(y);
-    //     row_num ++;
-    // }
     for (x = 0; x < GRID_WIDTH; x++){
       if(grid[y][x].isEmpty) {break;}
       if(x == GRID_WIDTH-1){
@@ -47,14 +33,9 @@ void clear_row(uint8_t line)
     {
         for (x = 0; x < GRID_WIDTH; x++)
         {
-            // cell = grid[y + 1][x];
-            // grid[y][x].isEmpty = cell.isEmpty;
-            // grid[y][x].color = cell.color;
             grid[y][x] = grid[y+1][x];
         }
     }
-    // empty_row(max_height);
-    // max_height--;
 }
 
 void empty_row(uint8_t line)

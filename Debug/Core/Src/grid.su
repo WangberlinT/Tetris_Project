@@ -1,5 +1,5 @@
 grid.c:10:9:grid_scan	16	static
-grid.c:42:6:clear_row	32	static
-grid.c:60:6:empty_row	24	static
-grid.c:67:6:grid_init	16	static
-grid.c:76:6:sub_grid_init	16	static
+grid.c:28:6:clear_row	32	static
+grid.c:41:6:empty_row	24	static
+grid.c:48:6:grid_init	16	static
+grid.c:57:6:sub_grid_init	16	static
