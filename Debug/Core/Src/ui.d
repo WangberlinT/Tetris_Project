@@ -24,8 +24,7 @@ Core/Src/ui.o: ../Core/Src/ui.c ../Core/Inc/lcd.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Inc/sys.h ../Core/Inc/grid.h ../Core/Inc/sys.h ../Core/Inc/ui.h \
- ../Core/Inc/lcd.h ../Core/Inc/usart.h ../Core/Inc/tetromino.h \
- ../Core/Inc/parameter.h
+ ../Core/Inc/lcd.h ../Core/Inc/usart.h ../Core/Inc/tetromino.h
 
 ../Core/Inc/lcd.h:
 
@@ -92,5 +91,3 @@ Core/Src/ui.o: ../Core/Src/ui.c ../Core/Inc/lcd.h ../Core/Inc/main.h \
 ../Core/Inc/usart.h:
 
 ../Core/Inc/tetromino.h:
-
-../Core/Inc/parameter.h:

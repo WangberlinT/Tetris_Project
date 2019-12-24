@@ -5,6 +5,7 @@
 
 Tetromino_t tetromino;
 Tetromino_t tetromino_next;
+Tetromino_t tetromino_next_next;
 Image_t tetimg_list[SHAPE_NUM];
 
 uint8_t left_shift_check() {
@@ -84,7 +85,8 @@ void flush_tetromino(){
 
 void tetromino_reset() {
   tetromino = tetromino_next;
-  tetromino_next = (Tetromino_t){
+  tetromino_next = tetromino_next_next;
+  tetromino_next_next = (Tetromino_t){
     .x = 3, .y = GRID_HEIGHT-4,
     .shape = rand()%SHAPE_NUM,
     .rotation = rand()%4
@@ -95,33 +97,34 @@ void tetromino_init() {
   srand(rand());
   tetromino_reset();
   tetromino_reset();
+  tetromino_reset();
 
   tetimg_list[SHAPE_I] = (Image_t){
       .x={{0,1,2,3},{2,2,2,2},{0,1,2,3},{2,2,2,2}},
       .y={{3,3,3,3},{0,1,2,3},{3,3,3,3},{0,1,2,3}},
-  		.color = RED };
+  		.color = MAGENTA };
   tetimg_list[SHAPE_J] = (Image_t){
       .x={{0,1,2,2},{0,1,1,1},{0,0,1,2},{1,1,1,2}},
       .y={{3,3,3,2},{1,1,2,3},{3,2,2,2},{1,2,3,3}},
-  		.color = BRRED };
+  		.color = GREEN };
   tetimg_list[SHAPE_L] = (Image_t){
       .x={{0,0,1,2},{1,2,2,2},{0,1,2,2},{1,1,1,2}},
       .y={{2,3,3,3},{3,3,2,1},{2,2,2,3},{3,2,1,1}},
-  		.color = GRAY };
+  		.color = BRED };
   tetimg_list[SHAPE_O] = (Image_t){
       .x={{0,1,0,1},{0,1,0,1},{0,1,0,1},{0,1,0,1}},
       .y={{3,3,2,2},{3,3,2,2},{3,3,2,2},{3,3,2,2}},
-  		.color = BLUE };
+  		.color = BROWN };
   tetimg_list[SHAPE_S] = (Image_t){
       .x={{0,1,1,2},{1,1,2,2},{0,1,1,2},{1,1,2,2}},
       .y={{2,2,3,3},{3,2,2,1},{2,2,3,3},{3,2,2,1}},
-  		.color = GREEN };
+  		.color = RED };
   tetimg_list[SHAPE_T] = (Image_t){
       .x={{0,1,1,2},{1,2,2,2},{0,1,1,2},{0,0,0,1}},
       .y={{3,3,2,3},{2,3,2,1},{2,3,2,2},{1,2,3,2}},
-  		.color = YELLOW };
+  		.color = DARKBLUE };
   tetimg_list[SHAPE_Z] = (Image_t){
       .x={{0,1,1,2},{0,0,1,1},{0,1,1,2},{0,0,1,1}},
       .y={{3,3,2,2},{1,2,2,3},{3,3,2,2},{1,2,2,3}},
-  		.color = BROWN };
+  		.color = GRED };
 }

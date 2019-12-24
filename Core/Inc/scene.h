@@ -6,6 +6,5 @@
 extern void (*scene_task)(void);
 
 void sw_game_scene(void);
-void sw_rank_sence(void);
 
 #endif

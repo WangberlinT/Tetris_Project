@@ -1,6 +1,5 @@
 scene.c:11:6:start_scene	4	static
-scene.c:15:6:rank_scene	4	static
-scene.c:19:6:game_scene	8	static
-scene.c:27:6:sw_game_scene	8	static
-scene.c:59:6:sw_rank_sence	8	static
-scene.c:85:6:scence_switch	4	static
+scene.c:16:6:rank_scene	4	static
+scene.c:21:6:game_scene	8	static
+scene.c:31:6:sw_game_scene	8	static
+scene.c:53:6:scence_switch	4	static
